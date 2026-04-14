@@ -1,0 +1,59 @@
+name = "negotiation-arena-worker"
+main = "src/index.ts"
+account_id = "df78ac02dad5500795c67541353ed776"
+compatibility_date = "2026-04-07"
+compatibility_flags = ["nodejs_compat"]
+
+# === GLOBAL BINDINGS (Top Level) ===
+[[kv_namespaces]]
+binding = "NEGOTIATION_ARENA_KV"
+id = "944a2b2fedaa4cf5829e71837e70d4df"
+
+[ai]
+binding = "AI"
+
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "negotiation-arena-storage"
+
+[[queues.producers]]
+queue = "score-queue"
+binding = "SCORE_QUEUE"
+
+[[queues.consumers]]
+queue = "score-queue"
+max_batch_size = 50
+max_batch_timeout = 5
+
+[triggers]
+crons = ["0 0 * * MON"]
+
+[durable_objects]
+bindings = [
+  { name = "MULTIPLAYER", class_name = "MultiplayerSession" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["MultiplayerSession"]
+
+[vars]
+ENVIRONMENT = "development"
+VITE_URL = "http://localhost:5173"
+
+# === ENVIRONMENTS ===
+[env.production]
+name = "negotiation-arena-worker-prod"
+route = { pattern = "api.negotiation-arena.onurd.com.tr/*", zone_name = "onurd.com.tr" }
+
+[env.production.vars]
+ENVIRONMENT = "production"
+VITE_URL = "https://negotiation-arena.onurd.com.tr"
+
+# Secrets (wrangler secret put ile eklenir):
+# NEON_DATABASE_URL
+# JWT_SECRET
+# GOOGLE_CLIENT_ID
+# GOOGLE_CLIENT_SECRET
+# GOOGLE_REDIRECT_URI
+# RESEND_API_KEY

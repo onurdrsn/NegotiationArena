@@ -1,0 +1,13 @@
+{
+  "name": "negotiation-arena",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "build": "pnpm --filter ./apps/web build",
+    "deploy:worker": "pnpm --filter ./apps/worker deploy",
+    "deploy:pages": "pnpm --filter ./apps/web build && wrangler pages deploy apps/web/dist",
+    "db:push": "pnpm --filter ./apps/worker drizzle-kit push",
+    "db:studio": "pnpm --filter ./apps/worker drizzle-kit studio"
+  }
+}

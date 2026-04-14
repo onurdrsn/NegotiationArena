@@ -1,0 +1,58 @@
+# ==============================================================================
+# Node.js ve Bağımlılıklar (Node.js & Dependencies)
+# ==============================================================================
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store
+
+# ==============================================================================
+# Çevre Değişkenleri ve Gizli Dosyalar (Environments & Secrets)
+# ==============================================================================
+.env                # Ortam değişkenleri ana dosyası (Şifreler vs. burada olur)
+.env.local          # Yerel geliştirme ortamı (Hassas bilgiler içerebilir)
+.env.*.local        # Ortama özel yerel değişkenler (.env.development.local vs)
+*.pem               # SSL/TLS sertifika veya anahtar dosyaları
+.dev.vars           # Cloudflare Workers için yerel gizli değişkenler
+
+# ==============================================================================
+# Derleme (Build) ve Çıktı Dosyaları
+# ==============================================================================
+dist/               # Uygulama derleme çıktıları (Frontend/Vite build folder)
+build/              # Uygulama derleme çıktıları (Alternatif)
+out/                # Çıktı klasörleri
+tsc-out/            # TypeScript derleyici (tsc) çıktı dosyaları
+.vercel/            # Vercel platformuna özgü build klasörleri (Vercel kullanılırsa)
+
+# ==============================================================================
+# Cloudflare ve Serverless
+# ==============================================================================
+.wrangler/          # Wrangler (Cloudflare) cli lokal veritabanı ve durum dosyaları
+
+# ==============================================================================
+# Editörler, İşletim Sistemleri ve IDE'ler (Editors & OS)
+# ==============================================================================
+.DS_Store           # macOS işletim sistemi klasör görünüm tercihleri
+.idea/              # IntelliJ, WebStorm gibi JetBrains IDE'lerinin ayar klasörü
+.vscode/            # VS Code yerel ayar dosyaları (isteğe bağlı yoruma alınabilir)
+*.suo               # Visual Studio ayar dosyaları
+*.ntvs*             # Node.js Tools for Visual Studio
+*.njsproj           # Visual Studio Node.js projeleri
+*.swp               # Vim geçici kayıt dosyaları
+
+# ==============================================================================
+# Test, Raporlar ve Hata Ayıklama (Testing, Reports & Logging)
+# ==============================================================================
+coverage/           # Test senaryolarının kod kapsama raporları
+.nyc_output/        # Istanbul (nyc) test kapsama aracı çıktı klasörü
+logs/               # Uygulamanın oluşturabileceği standart log klasörü
+*.log               # Root veya herhangi bir yerdeki loglar
+
+# ==============================================================================
+# Framework Özel ve Diğer Araçlar
+# ==============================================================================
+.eslintcache        # ESLint performans önbelleği
+.tsbuildinfo        # TypeScript projesi anlık yapılandırma (incremental build) bilgisi
+.vite/              # Vite önbelleği ve bundle çıktıları
