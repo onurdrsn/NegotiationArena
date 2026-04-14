@@ -1,9 +1,9 @@
 import { Env } from '../worker-env';
 import { getDb } from '../db/client';
-import { tournaments, tournamentScores, users } from '../db/schema';
-import { eq, desc, and, gte, lte } from 'drizzle-orm';
+import { tournaments, tournamentScores } from '../db/schema';
+import { eq, desc } from 'drizzle-orm';
 
-export const scheduledHandler = async (event: ScheduledEvent, env: Env, ctx: ExecutionContext) => {
+export const scheduledHandler = async (_event: ScheduledEvent, env: Env, _ctx: ExecutionContext) => {
   // CRON triggers every Monday at 00:00 (0 0 * * MON)
   // Close the active tournament
   const db = getDb(env.NEON_DATABASE_URL);

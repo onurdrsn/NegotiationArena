@@ -19,6 +19,12 @@ dev-api:
 dev-web:
 	pnpm --filter ./apps/web run dev
 
+# === DEPLOY ENV ===
+deploy-worker:
+	pnpm --filter ./apps/worker run deploy
+
+deploy-pages:
+	pnpm --filter ./apps/web run deploy
 
 # === BUILD ENV ===
 build-pages:

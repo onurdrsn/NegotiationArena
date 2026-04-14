@@ -16,9 +16,6 @@ export default function MultiplayerLobby() {
 
     const modeId = searchParams.get('modeId') || 'random';
 
-    // Protokolü düzgün ayarla
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    // Vite dev server'da genelde worker 8787/8788 üzerindedir. .env'den okumalı:
     const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8787';
     const wsUrl = `${baseUrl.replace(/^http/, 'ws')}/api/multiplayer/connect?modeId=${modeId}`;
 

@@ -2,7 +2,7 @@ import { Hono } from 'hono';
 import { zValidator } from '@hono/zod-validator';
 import { z } from 'zod';
 import { getDb } from '../db/client';
-import { customScenarios, scenarioLikes, users } from '../db/schema';
+import { customScenarios, users } from '../db/schema';
 import { eq, desc, and } from 'drizzle-orm';
 import { authMiddleware } from '../middleware/auth';
 import { Env } from '../worker-env';

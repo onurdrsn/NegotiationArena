@@ -12,7 +12,7 @@ interface ScorePayload {
   replayData: any; // Entire chat history
 }
 
-export const queueHandler = async (batch: MessageBatch<ScorePayload>, env: Env, ctx: ExecutionContext) => {
+export const queueHandler = async (batch: MessageBatch<ScorePayload>, env: Env, _ctx: ExecutionContext) => {
   const db = getDb(env.NEON_DATABASE_URL);
   const [activeTournament] = await db.select().from(tournaments).where(eq(tournaments.status, 'active'));
 

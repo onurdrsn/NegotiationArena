@@ -1,4 +1,4 @@
-name = "negotiation-arena-worker"
+name = "negotiation-arena-api"
 main = "src/index.ts"
 account_id = "df78ac02dad5500795c67541353ed776"
 compatibility_date = "2026-04-07"
