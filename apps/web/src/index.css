@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #050810;
+  --color-dark-panel: #0a1628;
+  --color-accent-yellow: #FFD700;
+  --color-accent-red: #FF3B3B;
+  --color-accent-green: #00FF88;
+}
+
+body {
+  background: radial-gradient(circle at center, var(--color-dark-panel) 0%, var(--color-dark-bg) 100%);
+  color: white;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background texture overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+}
+
+.mono-text {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@keyframes toast-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border: 1px solid var(--color-dark-panel);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1f2937 var(--color-dark-bg);
+}

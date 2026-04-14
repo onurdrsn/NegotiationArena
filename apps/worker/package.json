@@ -1,0 +1,28 @@
+{
+  "name": "worker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@arena/shared": "workspace:*",
+    "@hono/zod-validator": "^0.7.6",
+    "@neondatabase/serverless": "^0.9.5",
+    "bcryptjs": "^2.4.3",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "@types/bcryptjs": "^2.4.6",
+    "dotenv": "^17.3.1",
+    "drizzle-kit": "^0.24.2",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.81.1"
+  }
+}
