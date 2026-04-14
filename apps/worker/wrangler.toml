@@ -35,7 +35,7 @@ bindings = [
 
 [[migrations]]
 tag = "v1"
-new_classes = ["MultiplayerSession"]
+new_sqlite_classes = ["MultiplayerSession"]
 
 [vars]
 ENVIRONMENT = "development"
