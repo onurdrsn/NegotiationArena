@@ -6,6 +6,7 @@ import { gameRoutes } from './routes/game';
 import { leaderboardRoutes } from './routes/leaderboard';
 import { scenariosRoutes } from './routes/scenarios';
 import { userRoutes } from './routes/user';
+import { adminRoutes } from './routes/admin';
 import { multiplayerRoutes } from './routes/multiplayer';
 import { Env } from './worker-env';
 
@@ -25,6 +26,7 @@ const routes = app
   .route('/api/leaderboard', leaderboardRoutes)
   .route('/api/scenarios', scenariosRoutes)
   .route('/api/user', userRoutes)
+  .route('/api/admin', adminRoutes)
   .route('/api/multiplayer', multiplayerRoutes);
 
 export type AppType = typeof routes;

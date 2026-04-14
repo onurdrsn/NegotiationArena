@@ -35,7 +35,7 @@ build-worker:
 
 # === PRODUCTION ENV ===
 prod-api:
-	pnpm --filter ./apps/worker run deploy
+	pnpm --filter ./apps/worker run deploy:prod
 
 prod-web:
 	pnpm --filter ./apps/web run build

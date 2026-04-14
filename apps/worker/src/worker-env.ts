@@ -13,4 +13,5 @@ export interface Env {
   STORAGE: R2Bucket;
   SCORE_QUEUE: Queue;
   MULTIPLAYER: DurableObjectNamespace;
+  ENVIRONMENT: string;
 }

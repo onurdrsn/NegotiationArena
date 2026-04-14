@@ -43,7 +43,7 @@ VITE_URL = "http://localhost:5173"
 
 # === ENVIRONMENTS ===
 [env.production]
-name = "negotiation-arena-worker-prod"
+name = "negotiation-arena-api"
 route = { pattern = "api.negotiation-arena.onurd.com.tr/*", zone_name = "onurd.com.tr" }
 
 [env.production.vars]
